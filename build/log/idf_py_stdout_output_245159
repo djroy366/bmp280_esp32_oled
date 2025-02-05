@@ -1,0 +1,28 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/dj/bmp280_project/build/bootloader/esp-idf/esptool_py && /home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/dj/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/dj/bmp280_project/build/bootloader/bootloader.bin
+Bootloader binary size 0x6600 bytes. 0xa00 bytes (9%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/bmp280_project.c.obj
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable bmp280_project.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.9.dev5
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/dj/bmp280_project/build/bmp280_project.bin
+[7/8] cd /home/dj/bmp280_project/build/esp-idf/esptool_py && /home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/dj/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/dj/bmp280_project/build/partition_table/partition-table.bin /home/dj/bmp280_project/build/bmp280_project.bin
+bmp280_project.bin binary size 0x31b30 bytes. Smallest app partition is 0x100000 bytes. 0xce4d0 bytes (81%) free.
+[7/8] cd /home/dj/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/dj/esp-idf -D "SERIAL_TOOL=/home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python;;/home/dj/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/dj/bmp280_project/build -P /home/dj/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 bmp280_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.dev5
+Serial port /dev/ttyUSB0
+
+A fatal error occurred: Could not open /dev/ttyUSB0, the port is busy or doesn't exist.
+([Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0')
+
+Hint: Check if the port is correct and ESP connected
+
+FAILED: CMakeFiles/flash 
+cd /home/dj/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/dj/esp-idf -D "SERIAL_TOOL=/home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python;;/home/dj/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/dj/bmp280_project/build -P /home/dj/esp-idf/components/esptool_py/run_serial_tool.cmake
+ninja: build stopped: subcommand failed.

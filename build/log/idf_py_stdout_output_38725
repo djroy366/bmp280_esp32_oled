@@ -1,0 +1,16 @@
+[1/5] cd /home/dj/bmp280_project/build/esp-idf/esptool_py && /home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/dj/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/dj/bmp280_project/build/partition_table/partition-table.bin /home/dj/bmp280_project/build/bmp280_project.bin
+bmp280_project.bin binary size 0x31af0 bytes. Smallest app partition is 0x100000 bytes. 0xce510 bytes (81%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/dj/bmp280_project/build/bootloader/esp-idf/esptool_py && /home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/dj/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/dj/bmp280_project/build/bootloader/bootloader.bin
+Bootloader binary size 0x6600 bytes. 0xa00 bytes (9%) free.
+[2/3] cd /home/dj/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/dj/esp-idf -D "SERIAL_TOOL=/home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python;;/home/dj/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/dj/bmp280_project/build -P /home/dj/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 bmp280_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.dev5
+Serial port /dev/ttyUSB0
+Connecting......................................
+
+A fatal error occurred: Failed to connect to ESP32: Download mode successfully detected, but getting no sync reply: The serial TX path seems to be down.
+For troubleshooting steps visit: https://docs.espressif.com/projects/esptool/en/latest/troubleshooting.html
+FAILED: CMakeFiles/flash 
+cd /home/dj/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/dj/esp-idf -D "SERIAL_TOOL=/home/dj/.espressif/python_env/idf5.5_py3.9_env/bin/python;;/home/dj/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/dj/bmp280_project/build -P /home/dj/esp-idf/components/esptool_py/run_serial_tool.cmake
+ninja: build stopped: subcommand failed.

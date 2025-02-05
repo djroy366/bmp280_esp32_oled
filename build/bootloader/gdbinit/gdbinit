@@ -1,0 +1,2 @@
+source /home/dj/bmp280_project/build/bootloader/gdbinit/symbols
+source /home/dj/bmp280_project/build/bootloader/gdbinit/connect
