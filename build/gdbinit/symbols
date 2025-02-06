@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/dj/bmp280_project/build/bootloader/bootloader.elf
+    add-symbol-file /home/dj/bmp280_esp32_oled/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/dj/bmp280_project/build/bmp280_project.elf
+file /home/dj/bmp280_esp32_oled/build/bmp280_project.elf

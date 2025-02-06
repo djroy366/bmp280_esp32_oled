@@ -3,7 +3,7 @@
 #include "esp_log.h"
 #include "esp_err.h"
 
-#define TAG "BMP280_OLED"
+//#define TAG "BMP280_OLED"
 
 
 ///////////////////////////////////////////            OLED MACROS           ///////////////////////////////////////
@@ -24,7 +24,7 @@
 #include "esp_lcd_panel_vendor.h"
 #endif
 
-static const char *TAG = "example";
+static const char *TAG = "bmp280_esp32_oled";
 
 #define I2C_BUS_PORT  0
 
@@ -33,7 +33,7 @@ static const char *TAG = "example";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-#define EXAMPLE_LCD_PIXEL_CLOCK_HZ    (100 * 1000)  // Changed this from 400 khz to 100 khz, for bmp280 clock matching
+#define EXAMPLE_LCD_PIXEL_CLOCK_HZ    (400 * 1000)  // Changed this from 400 khz to 100 khz, for bmp280 clock matching
 #define EXAMPLE_PIN_NUM_SDA           GPIO_NUM_21
 #define EXAMPLE_PIN_NUM_SCL           GPIO_NUM_22
 #define EXAMPLE_PIN_NUM_RST           -1
@@ -151,7 +151,10 @@ static void example_lvgl_port_task(void *arg)
 #define I2C_MASTER_SCL_IO        22    /*!< SCL pin */
 #define I2C_MASTER_SDA_IO        21    /*!< SDA pin */
 #define I2C_MASTER_NUM           I2C_NUM_0
-#define I2C_MASTER_FREQ_HZ       100000  /*!< I2C master clock frequency */
+#define I2C_MASTER_FREQ_HZ       400000  /*!< I2C master clock frequency */
+
+
+esp_err_t bmp280_read_data(float *temperature, float *pressure, float *humidity);
 
 esp_err_t bmp280_i2c_write(uint8_t reg_addr, uint8_t data) {
     uint8_t write_data[2] = {reg_addr, data};
@@ -203,6 +206,124 @@ esp_err_t bmp280_init() {
     return ESP_OK;
 }
 
+
+#define BMP280_TASK_STACK_SIZE 4096  // Adjust based on your system's memory
+#define BMP280_TASK_PRIORITY 5      // Set priority appropriately
+
+// Task function for reading BMP280 data
+void bmp280_task(void *pvParameters) {
+    while (1) {
+        float temperature, pressure, humidity;
+        // Read sensor data
+        if (bmp280_read_data(&temperature, &pressure, &humidity) == ESP_OK) {
+            ESP_LOGI("BMP280", "Temperature: %.2f C, Pressure: %.2f hPa, Humidity: %.2f%%",
+                      temperature, pressure, humidity);
+        } else {
+            ESP_LOGE("BMP280", "Failed to read BMP280 data");
+        }
+        // Delay for 1 second
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+    // Clean up (this point is rarely reached in FreeRTOS tasks)
+    vTaskDelete(NULL);
+}
+
+
+///////////////////////////////////////       OLED initialisation      /////////////////////////////////////
+esp_err_t oled_init(){
+    ESP_LOGI(TAG, "Install panel IO");
+    esp_lcd_panel_io_handle_t io_handle = NULL;
+    esp_lcd_panel_io_i2c_config_t io_config = { 
+        .dev_addr = EXAMPLE_I2C_HW_ADDR,
+        //.scl_speed_hz = I2C_MASTER_FREQ_HZ,
+        .control_phase_bytes = 1,               // According to SSD1306 datasheet
+        .lcd_cmd_bits = EXAMPLE_LCD_CMD_BITS,   // According to SSD1306 datasheet
+        .lcd_param_bits = EXAMPLE_LCD_CMD_BITS, // According to SSD1306 datasheet
+#if CONFIG_EXAMPLE_LCD_CONTROLLER_SSD1306
+        .dc_bit_offset = 6,                     // According to SSD1306 datasheet
+#elif CONFIG_EXAMPLE_LCD_CONTROLLER_SH1107
+        .dc_bit_offset = 0,                     // According to SH1107 datasheet
+        .flags =
+        {
+            .disable_control_phase = 1,
+        }
+#endif
+    };  
+    //ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c(i2c_bus, &io_config, &io_handle));
+    ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c(I2C_BUS_PORT ,&io_config,&io_handle));
+
+
+    ESP_LOGI(TAG, "Install SSD1306 panel driver");
+    esp_lcd_panel_handle_t panel_handle = NULL;
+    esp_lcd_panel_dev_config_t panel_config = { 
+        .bits_per_pixel = 1,
+        .reset_gpio_num = EXAMPLE_PIN_NUM_RST,
+    };  
+#if CONFIG_EXAMPLE_LCD_CONTROLLER_SSD1306
+    esp_lcd_panel_ssd1306_config_t ssd1306_config = { 
+        .height = EXAMPLE_LCD_V_RES,
+    };  
+    panel_config.vendor_config = &ssd1306_config;
+    ESP_ERROR_CHECK(esp_lcd_new_panel_ssd1306(io_handle, &panel_config, &panel_handle));
+#elif CONFIG_EXAMPLE_LCD_CONTROLLER_SH1107
+    ESP_ERROR_CHECK(esp_lcd_new_panel_sh1107(io_handle, &panel_config, &panel_handle));
+#endif
+
+    ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
+    ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
+    ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(panel_handle, true));
+
+#if CONFIG_EXAMPLE_LCD_CONTROLLER_SH1107
+    ESP_ERROR_CHECK(esp_lcd_panel_invert_color(panel_handle, true));
+#endif
+
+    lv_init();
+    // create a lvgl display
+    lv_display_t *display = lv_display_create(EXAMPLE_LCD_H_RES, EXAMPLE_LCD_V_RES);
+    // associate the i2c panel handle to the display
+    lv_display_set_user_data(display, panel_handle);
+    // create draw buffer
+    void *buf = NULL;
+    ESP_LOGI(TAG, "Allocate separate LVGL draw buffers");
+    // LVGL reserves 2 x 4 bytes in the buffer, as these are assumed to be used as a palette.
+    size_t draw_buffer_sz = EXAMPLE_LCD_H_RES * EXAMPLE_LCD_V_RES / 8 + EXAMPLE_LVGL_PALETTE_SIZE;
+    buf = heap_caps_calloc(1, draw_buffer_sz, MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
+    assert(buf);
+
+    // LVGL9 suooprt new monochromatic format.
+    lv_display_set_color_format(display, LV_COLOR_FORMAT_I1);
+    // initialize LVGL draw buffers
+    lv_display_set_buffers(display, buf, NULL, draw_buffer_sz, LV_DISPLAY_RENDER_MODE_FULL);
+    // set the callback which can copy the rendered image to an area of the display
+    lv_display_set_flush_cb(display, example_lvgl_flush_cb);
+
+    ESP_LOGI(TAG, "Register io panel event callback for LVGL flush ready notification");
+    const esp_lcd_panel_io_callbacks_t cbs = {
+        .on_color_trans_done = example_notify_lvgl_flush_ready,
+    };
+    /* Register done callback */
+    esp_lcd_panel_io_register_event_callbacks(io_handle, &cbs, display);
+
+    ESP_LOGI(TAG, "Use esp_timer as LVGL tick timer");
+    const esp_timer_create_args_t lvgl_tick_timer_args = {
+        .callback = &example_increase_lvgl_tick,
+        .name = "lvgl_tick"
+    };
+    esp_timer_handle_t lvgl_tick_timer = NULL;
+    ESP_ERROR_CHECK(esp_timer_create(&lvgl_tick_timer_args, &lvgl_tick_timer));
+    ESP_ERROR_CHECK(esp_timer_start_periodic(lvgl_tick_timer, EXAMPLE_LVGL_TICK_PERIOD_MS * 1000));
+
+    ESP_LOGI(TAG, "Create LVGL task");
+   // xTaskCreate(example_lvgl_port_task, "LVGL", EXAMPLE_LVGL_TASK_STACK_SIZE, NULL, EXAMPLE_LVGL_TASK_PRIORITY, NULL);
+
+    ESP_LOGI(TAG, "Display LVGL Scroll Text");
+    // Lock the mutex due to the LVGL APIs are not thread-safe
+    _lock_acquire(&lvgl_api_lock);
+    example_lvgl_demo_ui(display);
+    _lock_release(&lvgl_api_lock);
+    return ESP_OK;
+}
+
 // Modified bmp280_read_data to include humidity
 esp_err_t bmp280_read_data(float *temperature, float *pressure, float *humidity) {
     uint8_t data[8];  // Increased size for humidity data (6 bytes for pressure and temperature, 2 for humidity)
@@ -239,7 +360,11 @@ void i2c_init() {
 void app_main(void) {
     i2c_init();
     ESP_ERROR_CHECK(bmp280_init());
+    ESP_ERROR_CHECK(oled_init());
 
+
+    xTaskCreate(example_lvgl_port_task, "LVGL", EXAMPLE_LVGL_TASK_STACK_SIZE, NULL, EXAMPLE_LVGL_TASK_PRIORITY, NULL);
+    xTaskCreate(bmp280_task, "BMP280 Task", BMP280_TASK_STACK_SIZE, NULL, BMP280_TASK_PRIORITY, NULL);
     while (1) {
         float temperature, pressure, humidity;
         if (bmp280_read_data(&temperature, &pressure, & humidity) == ESP_OK) {

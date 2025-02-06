@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+BMP280_CHIP_ID	bmp280_project.c	/^#define BMP280_CHIP_ID /;"	d	file:
+BMP280_CHIP_ID	bmp280_project_spi.c	/^#define BMP280_CHIP_ID /;"	d	file:
+BMP280_I2C_ADDR	bmp280_project.c	/^#define BMP280_I2C_ADDR /;"	d	file:
+BMP280_REG_CONFIG	bmp280_project.c	/^#define BMP280_REG_CONFIG /;"	d	file:
+BMP280_REG_CONFIG	bmp280_project_spi.c	/^#define BMP280_REG_CONFIG /;"	d	file:
+BMP280_REG_CTRL_MEAS	bmp280_project.c	/^#define BMP280_REG_CTRL_MEAS /;"	d	file:
+BMP280_REG_CTRL_MEAS	bmp280_project_spi.c	/^#define BMP280_REG_CTRL_MEAS /;"	d	file:
+BMP280_REG_HUM_LSB	bmp280_project.c	/^#define BMP280_REG_HUM_LSB /;"	d	file:
+BMP280_REG_HUM_MSB	bmp280_project.c	/^#define BMP280_REG_HUM_MSB /;"	d	file:
+BMP280_REG_ID	bmp280_project.c	/^#define BMP280_REG_ID /;"	d	file:
+BMP280_REG_ID	bmp280_project_spi.c	/^#define BMP280_REG_ID /;"	d	file:
+BMP280_REG_PRESS_MSB	bmp280_project.c	/^#define BMP280_REG_PRESS_MSB /;"	d	file:
+BMP280_REG_PRESS_MSB	bmp280_project_spi.c	/^#define BMP280_REG_PRESS_MSB /;"	d	file:
+BMP280_REG_RESET	bmp280_project.c	/^#define BMP280_REG_RESET /;"	d	file:
+BMP280_REG_RESET	bmp280_project_spi.c	/^#define BMP280_REG_RESET /;"	d	file:
+BMP280_REG_TEMP_MSB	bmp280_project.c	/^#define BMP280_REG_TEMP_MSB /;"	d	file:
+BMP280_REG_TEMP_MSB	bmp280_project_spi.c	/^#define BMP280_REG_TEMP_MSB /;"	d	file:
+EXAMPLE_I2C_HW_ADDR	bmp280_project.c	/^#define EXAMPLE_I2C_HW_ADDR /;"	d	file:
+EXAMPLE_LCD_CMD_BITS	bmp280_project.c	/^#define EXAMPLE_LCD_CMD_BITS /;"	d	file:
+EXAMPLE_LCD_H_RES	bmp280_project.c	/^#define EXAMPLE_LCD_H_RES /;"	d	file:
+EXAMPLE_LCD_PARAM_BITS	bmp280_project.c	/^#define EXAMPLE_LCD_PARAM_BITS /;"	d	file:
+EXAMPLE_LCD_PIXEL_CLOCK_HZ	bmp280_project.c	/^#define EXAMPLE_LCD_PIXEL_CLOCK_HZ /;"	d	file:
+EXAMPLE_LCD_V_RES	bmp280_project.c	/^#define EXAMPLE_LCD_V_RES /;"	d	file:
+EXAMPLE_LVGL_PALETTE_SIZE	bmp280_project.c	/^#define EXAMPLE_LVGL_PALETTE_SIZE /;"	d	file:
+EXAMPLE_LVGL_TASK_PRIORITY	bmp280_project.c	/^#define EXAMPLE_LVGL_TASK_PRIORITY /;"	d	file:
+EXAMPLE_LVGL_TASK_STACK_SIZE	bmp280_project.c	/^#define EXAMPLE_LVGL_TASK_STACK_SIZE /;"	d	file:
+EXAMPLE_LVGL_TICK_PERIOD_MS	bmp280_project.c	/^#define EXAMPLE_LVGL_TICK_PERIOD_MS /;"	d	file:
+EXAMPLE_PIN_NUM_RST	bmp280_project.c	/^#define EXAMPLE_PIN_NUM_RST /;"	d	file:
+EXAMPLE_PIN_NUM_SCL	bmp280_project.c	/^#define EXAMPLE_PIN_NUM_SCL /;"	d	file:
+EXAMPLE_PIN_NUM_SDA	bmp280_project.c	/^#define EXAMPLE_PIN_NUM_SDA /;"	d	file:
+I2C_BUS_PORT	bmp280_project.c	/^#define I2C_BUS_PORT /;"	d	file:
+I2C_MASTER_FREQ_HZ	bmp280_project.c	/^#define I2C_MASTER_FREQ_HZ /;"	d	file:
+I2C_MASTER_NUM	bmp280_project.c	/^#define I2C_MASTER_NUM /;"	d	file:
+I2C_MASTER_SCL_IO	bmp280_project.c	/^#define I2C_MASTER_SCL_IO /;"	d	file:
+I2C_MASTER_SDA_IO	bmp280_project.c	/^#define I2C_MASTER_SDA_IO /;"	d	file:
+PIN_NUM_CLK	bmp280_project_spi.c	/^#define PIN_NUM_CLK /;"	d	file:
+PIN_NUM_CS	bmp280_project_spi.c	/^#define PIN_NUM_CS /;"	d	file:
+PIN_NUM_MISO	bmp280_project_spi.c	/^#define PIN_NUM_MISO /;"	d	file:
+PIN_NUM_MOSI	bmp280_project_spi.c	/^#define PIN_NUM_MOSI /;"	d	file:
+TAG	bmp280_project.c	/^static const char *TAG = "example";$/;"	v	typeref:typename:const char *	file:
+TAG	bmp280_project_spi.c	/^#define TAG /;"	d	file:
+app_main	bmp280_project.c	/^void app_main(void) {$/;"	f	typeref:typename:void
+app_main	bmp280_project_spi.c	/^void app_main(void) {$/;"	f	typeref:typename:void
+bmp280_handle	bmp280_project_spi.c	/^spi_device_handle_t bmp280_handle;$/;"	v	typeref:typename:spi_device_handle_t
+bmp280_i2c_read	bmp280_project.c	/^esp_err_t bmp280_i2c_read(uint8_t reg_addr, uint8_t *data, size_t length) {$/;"	f	typeref:typename:esp_err_t
+bmp280_i2c_write	bmp280_project.c	/^esp_err_t bmp280_i2c_write(uint8_t reg_addr, uint8_t data) {$/;"	f	typeref:typename:esp_err_t
+bmp280_init	bmp280_project.c	/^esp_err_t bmp280_init() {$/;"	f	typeref:typename:esp_err_t
+bmp280_init	bmp280_project_spi.c	/^esp_err_t bmp280_init() {$/;"	f	typeref:typename:esp_err_t
+bmp280_read_data	bmp280_project.c	/^esp_err_t bmp280_read_data(float *temperature, float *pressure, float *humidity) {$/;"	f	typeref:typename:esp_err_t
+bmp280_read_data	bmp280_project_spi.c	/^esp_err_t bmp280_read_data(float *temperature, float *pressure) {$/;"	f	typeref:typename:esp_err_t
+bmp280_spi_init	bmp280_project_spi.c	/^void bmp280_spi_init() {$/;"	f	typeref:typename:void
+bmp280_spi_read	bmp280_project_spi.c	/^static esp_err_t bmp280_spi_read(uint8_t reg_addr, uint8_t *data, size_t length) {$/;"	f	typeref:typename:esp_err_t	file:
+bmp280_spi_write	bmp280_project_spi.c	/^static esp_err_t bmp280_spi_write(uint8_t reg_addr, uint8_t data) {$/;"	f	typeref:typename:esp_err_t	file:
+example_increase_lvgl_tick	bmp280_project.c	/^static void example_increase_lvgl_tick(void *arg)$/;"	f	typeref:typename:void	file:
+example_lvgl_demo_ui	lvgl_demo_ui.c	/^void example_lvgl_demo_ui(lv_display_t *disp)$/;"	f	typeref:typename:void
+example_lvgl_flush_cb	bmp280_project.c	/^static void example_lvgl_flush_cb(lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)$/;"	f	typeref:typename:void	file:
+example_lvgl_port_task	bmp280_project.c	/^static void example_lvgl_port_task(void *arg)$/;"	f	typeref:typename:void	file:
+example_notify_lvgl_flush_ready	bmp280_project.c	/^static bool example_notify_lvgl_flush_ready(esp_lcd_panel_io_handle_t io_panel, esp_lcd_panel_io/;"	f	typeref:typename:bool	file:
+i2c_init	bmp280_project.c	/^void i2c_init() {$/;"	f	typeref:typename:void
+lvgl_api_lock	bmp280_project.c	/^static _lock_t lvgl_api_lock;$/;"	v	typeref:typename:_lock_t	file:
+oled_buffer	bmp280_project.c	/^static uint8_t oled_buffer[EXAMPLE_LCD_H_RES * EXAMPLE_LCD_V_RES \/ 8];$/;"	v	typeref:typename:uint8_t[]	file:
+oled_init	bmp280_project.c	/^esp_err_t oled_init(){$/;"	f	typeref:typename:esp_err_t

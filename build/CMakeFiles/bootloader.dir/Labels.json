@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/dj/bmp280_project/build/CMakeFiles/bootloader"
+			"file" : "/home/dj/bmp280_esp32_oled/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/home/dj/bmp280_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/dj/bmp280_esp32_oled/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		}
 	],
 	"target" : 

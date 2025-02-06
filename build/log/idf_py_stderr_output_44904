@@ -1,0 +1,75 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/dj/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/dj/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+[0m
+[0;33m--- 0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081af5: panic_abort at /home/dj/esp-idf/components/esp_system/panic.c:454
+0x40086f4d: esp_system_abort at /home/dj/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x4008d049: abort at /home/dj/esp-idf/components/newlib/src/abort.c:38
+0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+0x400d73c7: app_main at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:349
+0x40118263: main_task at /home/dj/esp-idf/components/freertos/app_startup.c:208
+0x4008794d: vPortTaskWrapper at /home/dj/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/dj/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/dj/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+[0m
+[0;33m--- 0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081af5: panic_abort at /home/dj/esp-idf/components/esp_system/panic.c:454
+0x40086f4d: esp_system_abort at /home/dj/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x4008d049: abort at /home/dj/esp-idf/components/newlib/src/abort.c:38
+0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+0x400d73c7: app_main at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:349
+0x40118263: main_task at /home/dj/esp-idf/components/freertos/app_startup.c:208
+0x4008794d: vPortTaskWrapper at /home/dj/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/dj/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/dj/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+[0m
+[0;33m--- 0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081af5: panic_abort at /home/dj/esp-idf/components/esp_system/panic.c:454
+0x40086f4d: esp_system_abort at /home/dj/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x4008d049: abort at /home/dj/esp-idf/components/newlib/src/abort.c:38
+0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+0x400d73c7: app_main at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:349
+0x40118263: main_task at /home/dj/esp-idf/components/freertos/app_startup.c:208
+0x4008794d: vPortTaskWrapper at /home/dj/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/dj/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/dj/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0;33m--- 0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+[0m
+[0;33m--- 0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081af5: panic_abort at /home/dj/esp-idf/components/esp_system/panic.c:454
+0x40086f4d: esp_system_abort at /home/dj/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x4008d049: abort at /home/dj/esp-idf/components/newlib/src/abort.c:38
+0x40086f43: _esp_error_check_failed at /home/dj/esp-idf/components/esp_system/esp_err.c:49
+0x400d72ad: bmp280_read_data at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:305 (discriminator 1)
+0x400d73c7: app_main at /home/dj/bmp280_esp32_oled/build/../main/bmp280_project.c:349
+0x40118263: main_task at /home/dj/esp-idf/components/freertos/app_startup.c:208
+0x4008794d: vPortTaskWrapper at /home/dj/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _invalid_pc_placeholder at /home/dj/esp-idf/components/xtensa/xtensa_vectors.S:2235
+[0m
+[0;33m--- 0x40080638: call_start_cpu0 at /home/dj/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0m

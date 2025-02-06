@@ -1,0 +1,604 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6328
+load:0x40078000,len:15828
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Feb  6 2025 01:15:55[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=10fb0h ( 69552) map[0m
+[0;32mI (112) esp_image: segment 1: paddr=00020fd8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00020ffc vaddr=3ffb0000 size=0243ch (  9276) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00023440 vaddr=40080000 size=0cbd8h ( 52184) load[0m
+[0;32mI (144) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=48a04h (297476) map[0m
+[0;32mI (246) esp_image: segment 5: paddr=00078a2c vaddr=4008cbd8 size=01cach (  7340) load[0m
+[0;32mI (256) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (256) boot: Disabling RNG early entropy source...[0m
+[0;32mI (267) cpu_start: Multicore app[0m
+[0;32mI (275) cpu_start: Pro cpu start user code[0m
+[0;32mI (275) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (275) app_init: Application information:[0m
+[0;32mI (275) app_init: Project name:     bmp280_project[0m
+[0;32mI (280) app_init: App version:      aa084ca-dirty[0m
+[0;32mI (284) app_init: Compile time:     Feb  6 2025 01:15:47[0m
+[0;32mI (289) app_init: ELF file SHA256:  b682a6d35...[0m
+[0;32mI (293) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9-dirty[0m
+[0;32mI (299) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (303) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (307) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (311) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (318) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (323) heap_init: At 3FFC3300 len 0001CD00 (115 KiB): DRAM[0m
+[0;32mI (328) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (333) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (339) heap_init: At 4008E884 len 0001177C (69 KiB): IRAM[0m
+[0;32mI (345) spi_flash: detected chip: generic[0m
+[0;32mI (348) spi_flash: flash io: dio[0m
+[0;33mW (351) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (361) main_task: Started on CPU0[0m
+[0;32mI (371) main_task: Calling app_main()[0m
+[0;32mI (471) bmp280_esp32_oled: BMP280 initialized.[0m
+[0;32mI (471) bmp280_esp32_oled: Install panel IO[0m
+[0;32mI (471) bmp280_esp32_oled: Install SSD1306 panel driver[0m
+[0;32mI (571) bmp280_esp32_oled: Allocate separate LVGL draw buffers[0m
+[0;32mI (571) bmp280_esp32_oled: Register io panel event callback for LVGL flush ready notification[0m
+[0;32mI (581) bmp280_esp32_oled: Use esp_timer as LVGL tick timer[0m
+[0;32mI (581) bmp280_esp32_oled: Create LVGL task[0m
+[0;32mI (591) bmp280_esp32_oled: Display LVGL Scroll Text[0m
+[0;32mI (601) bmp280_esp32_oled: Starting LVGL task[0m
+[0;32mI (611) BMP280: Temperature: 5267.68 C, Pressure: 1672.06 hPa, Humidity: 35.86%[0m
+[0;32mI (711) BMP280: Temperature: 5268.00 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (721) BMP280: Temperature: 5268.32 C, Pressure: 1672.06 hPa, Humidity: 35.86%[0m
+[0;32mI (721) bmp280_esp32_oled: Temperature: 5268.16 C, Pressure: 1672.06 hPa, Humidity : 35.86 [0m
+[0;32mI (811) BMP280: Temperature: 5268.96 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (831) BMP280: Temperature: 5268.64 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (921) BMP280: Temperature: 5268.96 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (931) BMP280: Temperature: 5268.96 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (1031) BMP280: Temperature: 5268.96 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1041) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1141) BMP280: Temperature: 5268.96 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1151) BMP280: Temperature: 5268.96 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1251) BMP280: Temperature: 5268.96 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1261) BMP280: Temperature: 5269.12 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (1361) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (1461) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (1471) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1571) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1581) BMP280: Temperature: 5269.12 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1671) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (1681) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (1691) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1781) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1791) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (1891) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (1901) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2001) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (2011) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (2011) bmp280_esp32_oled: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity : 35.86 [0m
+[0;32mI (2111) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2211) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (2221) BMP280: Temperature: 5269.12 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2321) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (2331) BMP280: Temperature: 5269.12 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (2421) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2531) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2541) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (2641) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (2651) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (2751) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (2761) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2851) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (2871) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (2961) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (2971) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3071) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (3081) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (3181) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3191) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (3291) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (3301) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (3301) bmp280_esp32_oled: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity : 35.86 [0m
+[0;32mI (3391) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (3501) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3511) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3611) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (3621) BMP280: Temperature: 5268.96 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (3721) BMP280: Temperature: 5269.76 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (3731) BMP280: Temperature: 5268.96 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (3821) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3831) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3841) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3931) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3941) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (3951) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (4041) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4151) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4161) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (4261) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (4271) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4371) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4381) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4381) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity : 35.86 [0m
+[0;32mI (4471) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4491) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4581) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (4591) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (4691) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4701) BMP280: Temperature: 5269.12 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (4801) BMP280: Temperature: 5269.12 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (4811) BMP280: Temperature: 5268.96 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (4911) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (4921) BMP280: Temperature: 5269.28 C, Pressure: 1672.56 hPa, Humidity: 35.86%[0m
+[0;32mI (5011) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5031) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5121) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (5131) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (5231) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5241) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (5341) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (5351) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5451) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (5461) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (5551) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5561) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5571) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5661) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (5671) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (5681) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (5771) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5781) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (5881) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (5891) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (5891) bmp280_esp32_oled: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity : 35.86 [0m
+[0;32mI (5991) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6001) BMP280: Temperature: 5269.12 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6101) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (6111) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6201) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6211) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6221) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (6311) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (6321) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (6331) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (6421) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (6441) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (6531) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (6541) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6551) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (6641) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6651) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6751) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6761) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (6861) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (6871) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6971) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (6981) BMP280: Temperature: 5269.12 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (7071) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (7081) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (7091) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7181) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7191) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7291) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (7301) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (7301) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity : 35.86 [0m
+[0;32mI (7401) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7411) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (7501) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7611) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (7621) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7721) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (7731) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (7831) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (7841) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (7941) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (8041) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (8051) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (8151) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (8161) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (8261) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (8271) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (8361) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (8371) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (8471) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (8481) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (8581) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (8591) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (8591) bmp280_esp32_oled: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity : 35.86 [0m
+[0;32mI (8691) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (8701) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (8791) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (8901) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (8911) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9011) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (9021) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (9121) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (9131) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (9221) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (9231) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (9241) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (9331) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9341) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9351) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (9441) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9451) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (9551) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (9561) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9661) BMP280: Temperature: 5269.76 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (9671) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (9771) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (9781) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9781) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity : 35.86 [0m
+[0;32mI (9871) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (9981) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (9991) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (10091) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10101) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (10201) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10211) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (10301) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (10311) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10321) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (10411) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (10421) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (10431) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (10521) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10531) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10631) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10641) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10741) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10751) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (10851) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10861) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10951) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10961) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (10971) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (11061) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11071) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11171) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (11181) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (11181) bmp280_esp32_oled: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity : 35.86 [0m
+[0;32mI (11281) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (11291) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (11381) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (11401) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11491) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (11501) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (11601) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (11611) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (11711) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11721) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11821) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (11831) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11921) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11931) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (11941) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (12031) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (12041) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (12141) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (12151) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (12251) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (12261) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (12261) bmp280_esp32_oled: Temperature: 5269.92 C, Pressure: 1672.19 hPa, Humidity : 35.86 [0m
+[0;32mI (12361) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (12371) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (12461) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (12571) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (12581) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (12681) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (12691) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (12791) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (12801) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (12901) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (12911) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (13001) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (13021) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13111) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13121) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (13221) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (13231) BMP280: Temperature: 5269.28 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (13331) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13341) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (13441) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13451) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13551) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (13561) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13561) bmp280_esp32_oled: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity : 35.86 [0m
+[0;32mI (13651) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (13671) BMP280: Temperature: 5269.60 C, Pressure: 1672.12 hPa, Humidity: 35.86%[0m
+[0;32mI (13761) BMP280: Temperature: 5269.60 C, Pressure: 1672.50 hPa, Humidity: 35.86%[0m
+[0;32mI (13771) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13871) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13881) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13981) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (13991) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14091) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (14101) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14191) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (14201) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (14211) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14301) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14311) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (14411) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (14421) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14521) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14531) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14621) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14641) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (14731) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (14741) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (14751) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (14841) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (14851) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (14951) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (14961) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (14961) bmp280_esp32_oled: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity : 35.86 [0m
+[0;32mI (15061) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15071) BMP280: Temperature: 5269.76 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (15161) BMP280: Temperature: 5269.92 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (15171) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15181) BMP280: Temperature: 5269.92 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (15271) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (15281) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (15291) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (15381) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15391) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15401) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (15491) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15501) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (15511) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15601) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (15611) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (15711) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (15721) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (15821) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (15831) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (15931) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (15941) BMP280: Temperature: 5269.92 C, Pressure: 1672.62 hPa, Humidity: 35.86%[0m
+[0;32mI (16031) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16051) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16141) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (16151) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (16161) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16251) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16261) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (16361) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16371) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16471) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (16481) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16481) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity : 35.86 [0m
+[0;32mI (16581) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (16681) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (16691) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (16791) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (16801) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (16901) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (16911) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (17001) BMP280: Temperature: 5269.60 C, Pressure: 1672.50 hPa, Humidity: 35.86%[0m
+[0;32mI (17011) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17111) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17121) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (17221) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (17231) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (17331) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (17341) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (17431) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17451) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17541) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17551) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17651) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (17661) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (17661) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity : 35.86 [0m
+[0;32mI (17761) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (17771) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (17861) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (17881) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17971) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (17981) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18081) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (18091) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (18191) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (18201) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18291) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18311) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (18401) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (18411) BMP280: Temperature: 5269.76 C, Pressure: 1672.12 hPa, Humidity: 35.86%[0m
+[0;32mI (18511) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18521) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (18621) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (18631) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18731) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18741) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (18841) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (18851) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (18941) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (18951) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (18961) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (19051) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19061) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19161) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19171) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19271) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (19281) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (19381) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (19391) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19491) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19501) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19501) bmp280_esp32_oled: Temperature: 5269.76 C, Pressure: 1672.25 hPa, Humidity : 35.86 [0m
+[0;32mI (19591) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19611) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (19701) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (19711) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (19811) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19821) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (19921) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (19931) BMP280: Temperature: 5269.12 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20031) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (20041) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (20131) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (20151) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20241) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20251) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20351) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20361) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (20461) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (20471) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20571) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20581) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (20581) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.56 hPa, Humidity : 35.86 [0m
+[0;32mI (20671) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (20691) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (20781) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (20791) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (20891) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (20901) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (21001) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21011) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (21111) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (21121) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21211) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (21231) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21321) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21331) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (21341) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21431) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (21441) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (21541) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21551) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (21651) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (21661) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21761) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21771) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21771) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity : 35.86 [0m
+[0;32mI (21861) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (21881) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (21971) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (21981) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (22081) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (22091) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (22191) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (22201) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (22301) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (22311) BMP280: Temperature: 5269.76 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (22401) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (22411) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (22511) BMP280: Temperature: 5269.76 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (22521) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (22621) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (22631) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (22731) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (22741) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (22831) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (22941) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (22951) BMP280: Temperature: 5269.44 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (23051) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23061) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (23161) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (23161) bmp280_esp32_oled: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity : 35.86 [0m
+[0;32mI (23171) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (23261) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (23271) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23371) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (23381) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23481) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (23491) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23591) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23601) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23691) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (23801) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (23811) BMP280: Temperature: 5269.44 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (23911) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (23921) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (24011) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (24121) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (24131) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (24231) BMP280: Temperature: 5269.92 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (24241) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (24341) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (24351) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (24441) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (24451) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (24461) BMP280: Temperature: 5269.76 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (24551) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (24561) BMP280: Temperature: 5269.44 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (24661) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (24671) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (24771) BMP280: Temperature: 5269.28 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (24781) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (24781) bmp280_esp32_oled: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity : 35.86 [0m
+[0;32mI (24881) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (24891) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (24981) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (25001) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25091) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (25101) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (25201) BMP280: Temperature: 5269.60 C, Pressure: 1672.06 hPa, Humidity: 35.86%[0m
+[0;32mI (25211) BMP280: Temperature: 5269.28 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (25311) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (25321) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25421) BMP280: Temperature: 5269.28 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (25431) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25521) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (25531) BMP280: Temperature: 5269.60 C, Pressure: 1672.25 hPa, Humidity: 35.86%[0m
+[0;32mI (25541) BMP280: Temperature: 5269.44 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (25631) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25641) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25651) BMP280: Temperature: 5269.60 C, Pressure: 1672.19 hPa, Humidity: 35.86%[0m
+[0;32mI (25741) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25751) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (25761) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25851) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (25961) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (25971) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26071) BMP280: Temperature: 5269.60 C, Pressure: 1672.56 hPa, Humidity: 35.86%[0m
+[0;32mI (26081) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26181) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26191) BMP280: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26191) bmp280_esp32_oled: Temperature: 5269.28 C, Pressure: 1672.31 hPa, Humidity : 35.86 [0m
+[0;32mI (26291) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26391) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26401) BMP280: Temperature: 5269.60 C, Pressure: 1672.56 hPa, Humidity: 35.86%[0m
+[0;32mI (26501) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26511) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26611) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26621) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26711) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26821) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26831) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (26931) BMP280: Temperature: 5269.92 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (26941) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (27041) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27051) BMP280: Temperature: 5269.60 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (27141) BMP280: Temperature: 5269.92 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (27251) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27261) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27361) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27371) BMP280: Temperature: 5269.76 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (27471) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27481) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27581) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27591) BMP280: Temperature: 5269.76 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (27691) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27701) BMP280: Temperature: 5269.44 C, Pressure: 1672.31 hPa, Humidity: 35.86%[0m
+[0;32mI (27791) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27801) BMP280: Temperature: 5269.76 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27811) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (27901) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (27911) BMP280: Temperature: 5269.60 C, Pressure: 1672.38 hPa, Humidity: 35.86%[0m
+[0;32mI (28011) BMP280: Temperature: 5269.60 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m
+[0;32mI (28021) BMP280: Temperature: 5269.92 C, Pressure: 1672.44 hPa, Humidity: 35.86%[0m

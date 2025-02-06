@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /home/dj/bmp280_project/build/bootloader/bootloader.elf
+file /home/dj/bmp280_esp32_oled/build/bootloader/bootloader.elf

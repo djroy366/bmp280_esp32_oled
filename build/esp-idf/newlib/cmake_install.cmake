@@ -34,6 +34,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/dj/bmp280_project/build/esp-idf/newlib/src/port/cmake_install.cmake")
+  include("/home/dj/bmp280_esp32_oled/build/esp-idf/newlib/src/port/cmake_install.cmake")
 endif()
 

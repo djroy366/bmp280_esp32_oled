@@ -1,4 +1,4 @@
-# Install script for directory: /home/dj/bmp280_project/main
+# Install script for directory: /home/dj/bmp280_esp32_oled/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

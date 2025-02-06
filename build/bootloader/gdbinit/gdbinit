@@ -1,2 +1,2 @@
-source /home/dj/bmp280_project/build/bootloader/gdbinit/symbols
-source /home/dj/bmp280_project/build/bootloader/gdbinit/connect
+source /home/dj/bmp280_esp32_oled/build/bootloader/gdbinit/symbols
+source /home/dj/bmp280_esp32_oled/build/bootloader/gdbinit/connect
